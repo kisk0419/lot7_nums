@@ -27,14 +27,14 @@ def is_correct_numbers(numbers: List[int]) -> bool:
 
 def main(set_num: int = SET_NUM, buy_num: int = BUY_NUM):
     for _ in range(buy_num):
-        avail_num_cnt = 0
-        last_nums = None
-        while set_num > avail_num_cnt:
+        correct_num_cnt = 0
+        lastest_nums = None
+        while set_num > correct_num_cnt:
             nums = get_numbers()
             if is_correct_numbers(nums):
-                avail_num_cnt += 1
-                last_nums = nums
-        print(sorted(last_nums))
+                correct_num_cnt += 1
+                lastest_nums = nums
+        print(sorted(lastest_nums))
 
 
 if __name__ == '__main__':
