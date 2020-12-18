@@ -10,13 +10,10 @@ def get_numbers(min: int = 1, max: int = 37) -> List[int]:
     ランダムに番号を7つ取得する
     """
 
-    nums = []
-    for _ in range(7):
-        nums.append(randint(min, max))
-    return nums
+    return [randint(min, max) for _ in range(7)]
 
 
-def is_available_numbers(numbers: List[int]) -> bool:
+def is_correct_numbers(numbers: List[int]) -> bool:
     """
     番号に重複がない正しい数列かチェックする
     """
@@ -34,7 +31,7 @@ def main(set_num: int = SET_NUM, buy_num: int = BUY_NUM):
         last_nums = None
         while set_num > avail_num_cnt:
             nums = get_numbers()
-            if is_available_numbers(nums):
+            if is_correct_numbers(nums):
                 avail_num_cnt += 1
                 last_nums = nums
         print(sorted(last_nums))
